@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-# name: discourse-plugin-name
-# about: TODO
+# name: uniswap-discourse-plugin
+# about: Senate Discourse plugin for Uniswap
 # version: 0.0.1
-# authors: Discourse
-# url: TODO
+# authors: Senate
+# url: https://senatelabs.xyz
 # required_version: 2.7.0
 
 enabled_site_setting :plugin_name_enabled
 
 module ::MyPluginModule
-  PLUGIN_NAME = "discourse-plugin-name"
+  PLUGIN_NAME = "uniswap-discourse-plugin"
 end
 
 require_relative "lib/my_plugin_module/engine"
