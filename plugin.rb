@@ -7,4 +7,4 @@
 # url: https://senatelabs.xyz
 # required_version: 2.7.0
 
-register_asset "javascripts/discourse/header-button.js.es6"
+register_asset 'stylesheets/header.scss', :desktop
