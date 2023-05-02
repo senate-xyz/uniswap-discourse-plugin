@@ -33,7 +33,7 @@ function initializeTooltipButton(api) {
 }
 
 export default {
-  name: "custom-tooltip-button",
+  name: "uniswap-discourse-plugin",
   initialize(container) {
     withPluginApi("0.8.31", initializeTooltipButton);
   },
