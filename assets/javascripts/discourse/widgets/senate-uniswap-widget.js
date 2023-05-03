@@ -139,6 +139,19 @@ export default createWidget("senate-uniswap", {
                     ),
                   ]
                 ),
+                h("div.tooltip-tail", {
+                  style: {
+                    width: "0",
+                    height: "0",
+                    borderTop: "10px solid transparent",
+                    borderBottom: "10px solid transparent",
+                    borderRight: "10px solid rgba(115, 70, 85, 1)",
+                    position: "absolute",
+                    left: "50%",
+                    transform: "rotate(90deg)",
+                    marginTop: "-230px",
+                  },
+                }),
               ]
             )
           : null,
@@ -195,6 +208,19 @@ export default createWidget("senate-uniswap", {
                   },
                   "Please click on the link we just sent to your email to confirm your subscription to Uniswap Proposals Notifications"
                 ),
+                h("div.tooltip-tail", {
+                  style: {
+                    width: "0",
+                    height: "0",
+                    borderTop: "10px solid transparent",
+                    borderBottom: "10px solid transparent",
+                    borderRight: "10px solid rgba(115, 70, 85, 1)",
+                    position: "absolute",
+                    left: "50%",
+                    transform: "rotate(90deg)",
+                    marginTop: "-291px",
+                  },
+                }),
               ]
             )
           : null,
