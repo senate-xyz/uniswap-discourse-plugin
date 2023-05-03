@@ -7,4 +7,4 @@
 # url: https://senatelabs.xyz
 # required_version: 2.7.0
 
-register_asset 'stylesheets/header.scss', :desktop
+register_asset 'stylesheets/senate-button.scss', :desktop
