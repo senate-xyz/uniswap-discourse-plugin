@@ -11,6 +11,26 @@ export default createWidget("senate-uniswap", {
 
   buildKey: () => "senate-uniswap",
 
+  async createUniswapUser(email) {
+    try {
+      const response = await fetch(
+        `/senate-uniswap/create-uniswap-user/${email}`,
+        {
+          method: "POST",
+        }
+      );
+      console.log(response);
+      if (response.status == 200) {
+        this.state.tooltipState = 1;
+        this.scheduleRerender();
+      } else {
+        throw new Error("API call failed");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  },
+
   html(attrs, state) {
     let icon = iconNode("envelope");
 
@@ -133,8 +153,7 @@ export default createWidget("senate-uniswap", {
                           cursor: "pointer",
                         },
                         onclick: () => {
-                          state.tooltipState = 1;
-                          this.scheduleRerender();
+                          this.createUniswapUser(state.email);
                         },
                       },
                       "Subscribe"
