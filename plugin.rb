@@ -6,3 +6,4 @@
 # authors: Senate
 # url: https://senatelabs.xyz
 # required_version: 2.7.0
+
