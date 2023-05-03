@@ -23,9 +23,11 @@ export default createWidget("senate-uniswap", {
         body: JSON.stringify({ email }),
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
       });
       console.log(response);
+
       if (response.status == 200) {
         this.state.tooltipState = 1;
         this.scheduleRerender();
