@@ -1,9 +1,9 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 
 export default {
-  name: "header-tooltip",
+  name: "uniswap-discourse-plugin",
   initialize(container) {
-    withPluginApi("0.8.31", (api) => {
+    withPluginApi("0.8.9", (api) => {
       api.modifyClass("component:site-header", {
         didInsertElement() {
           this._super();
@@ -18,17 +18,22 @@ export default {
         addButtonWithTooltip() {
           const button = document.createElement("button");
           button.innerHTML = "Subscribe for Uniswap";
-          button.className = "header-tooltip-button";
-          button.style.position = "relative";
+          button.className = "header-senate-button";
+          button.style.position = "absolute";
+          button.style.right = "50px";
+          button.style.top = "50%";
+          button.style.transform = "translateY(-50%)";
 
           const tooltip = document.createElement("div");
           tooltip.innerHTML = "This is a test tooltip";
-          tooltip.className = "header-tooltip";
+          tooltip.className = "senate-tooltip";
           tooltip.style.display = "none";
           tooltip.style.position = "absolute";
           tooltip.style.backgroundColor = "white";
           tooltip.style.border = "1px solid black";
           tooltip.style.padding = "5px";
+          tooltip.style.right = "0";
+          tooltip.style.top = "100%";
 
           button.appendChild(tooltip);
 
@@ -42,7 +47,7 @@ export default {
         },
 
         removeButtonWithTooltip() {
-          const button = document.querySelector(".header-tooltip-button");
+          const button = document.querySelector(".header-senate-button");
           if (button) {
             button.remove();
           }
