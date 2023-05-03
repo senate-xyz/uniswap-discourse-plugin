@@ -6,19 +6,25 @@ export default createWidget("senate-uniswap", {
   tagName: "div.senate-uniswap",
 
   defaultState() {
-    return { tooltipVisible: false, buttonEnabled: false, tooltipState: 0 };
+    return {
+      tooltipVisible: false,
+      buttonEnabled: false,
+      tooltipState: 0,
+      email: "",
+    };
   },
 
   buildKey: () => "senate-uniswap",
 
   async createUniswapUser(email) {
     try {
-      const response = await fetch(
-        `/senate-uniswap/create-uniswap-user/${email}`,
-        {
-          method: "POST",
-        }
-      );
+      const response = await fetch(`/senate-uniswap/create-senate-user`, {
+        method: "POST",
+        body: JSON.stringify({ email }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       console.log(response);
       if (response.status == 200) {
         this.state.tooltipState = 1;
@@ -136,6 +142,7 @@ export default createWidget("senate-uniswap", {
                       },
                       oninput: (event) => {
                         state.buttonEnabled = event.target.value !== "";
+                        state.email = event.target.value;
                         this.scheduleRerender();
                       },
                     }),
