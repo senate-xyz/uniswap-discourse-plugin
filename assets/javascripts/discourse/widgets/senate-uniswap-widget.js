@@ -19,8 +19,9 @@ export default createWidget("senate-uniswap", {
       {
         style: {
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          maxWidth: "1090px",
+          margin: "0 auto",
+          justifyContent: "end",
         },
       },
       [
@@ -40,7 +41,7 @@ export default createWidget("senate-uniswap", {
               borderRadius: "16px",
               cursor: "pointer",
               padding: "0.5em 1em",
-              margin: "1em 30px 1em 1em",
+              margin: "0.5em 0",
             },
           },
           h(
@@ -62,7 +63,7 @@ export default createWidget("senate-uniswap", {
                   fontSize: "14px",
                   color: "#333",
                   whiteSpace: "nowrap",
-                  marginTop: "65px",
+                  marginTop: "35px",
                 },
               },
               "This is a test tooltip"
