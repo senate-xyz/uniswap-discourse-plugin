@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# name: uniswap-discourse-plugin
+# name: senate-plugin-uniswap
 # about: Senate Discourse plugin for Uniswap
 # version: 0.0.1
 # authors: Senate

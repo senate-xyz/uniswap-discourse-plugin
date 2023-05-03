@@ -8,7 +8,7 @@ function createTooltipButton(helper) {
 
   return helper.h("div", {}, [
     helper.h(
-      "button.tooltip-btn",
+      "button.senate-uniswap-btn",
       {
         onclick: () => {
           isVisible = !isVisible;
@@ -22,6 +22,7 @@ function createTooltipButton(helper) {
           borderRadius: "16px",
           cursor: "pointer",
           padding: "0.5em 1em",
+          margin: "1em",
         },
       },
       helper.h(
@@ -31,28 +32,21 @@ function createTooltipButton(helper) {
       )
     ),
     helper.h(
-      "div.tooltip-content",
+      "div.senate-uniswap-tooltip",
       { style: { display: isVisible ? "block" : "none" } },
       [h("p", "This is a test tooltip")]
     ),
   ]);
-
-  function render() {
-    const container = document.querySelector(".tooltip-btn-container");
-    if (container) {
-      helper.mount(container, createTooltipButton(helper));
-    }
-  }
 }
 
 export default {
-  name: "discourse-tooltip-button",
+  name: "senate-plugin-uniswap",
 
   initialize() {
     withPluginApi("0.8.20", (api) => {
       api.decorateWidget("header-buttons:before", (helper) => {
         if (api.getCurrentUser()) {
-          return helper.h("div.tooltip-btn-container", [
+          return helper.h("div.senate-uniswap-container", [
             createTooltipButton(helper),
           ]);
         }
