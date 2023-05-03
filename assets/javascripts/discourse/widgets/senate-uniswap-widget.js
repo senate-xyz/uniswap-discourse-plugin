@@ -55,18 +55,20 @@ export default createWidget("senate-uniswap", {
               "div.tooltip",
               {
                 style: {
-                  maxWidth: "350px",
+                  maxWidth: "380px",
                   position: "absolute",
                   background:
                     "linear-gradient(53.9deg, rgba(233, 51, 122, 0.25) -0.34%, rgba(251, 198, 219, 0.25) 90.27%), #482731",
-                  padding: "20px",
-                  borderRadius: "8px",
+                  padding: "36px",
+                  borderRadius: "16px",
                   fontSize: "14px",
                   color: "#fff",
                   marginTop: "55px",
                   boxShadow: "0px 3px 8px rgba(0, 0, 0, 0.33)",
                   zIndex: "10",
                   textAlign: "center",
+                  display: "flex-row",
+                  alignItems: "center",
                 },
               },
               [
@@ -76,7 +78,7 @@ export default createWidget("senate-uniswap", {
                     style: {
                       fontWeight: "700",
                       fontSize: "28px",
-                      margin: "0 0 10px",
+                      margin: "0 0 25px",
                     },
                   },
                   "Subscribe to Uniswap Proposal Notifications"
@@ -87,7 +89,7 @@ export default createWidget("senate-uniswap", {
                     style: {
                       fontWeight: "400",
                       fontSize: "16px",
-                      margin: "0 0 10px",
+                      margin: "0 0 35px",
                     },
                   },
                   "Get an email to be notified of off-chain and on-chain Uniswap proposals that you can vote on."
@@ -107,7 +109,7 @@ export default createWidget("senate-uniswap", {
                       placeholder: "voter@uniswap.org",
                       style: {
                         height: "44px",
-                        width: "60%",
+                        width: "100%",
                         background: "#D9D9D9",
                         color: "#000000",
                         border: "1px solid #000",
@@ -149,7 +151,7 @@ export default createWidget("senate-uniswap", {
                     position: "absolute",
                     left: "50%",
                     transform: "rotate(90deg)",
-                    marginTop: "-230px",
+                    marginTop: "-284px",
                   },
                 }),
               ]
@@ -160,18 +162,20 @@ export default createWidget("senate-uniswap", {
               "div.tooltip",
               {
                 style: {
-                  maxWidth: "350px",
+                  maxWidth: "380px",
                   position: "absolute",
                   background:
                     "linear-gradient(53.9deg, rgba(233, 51, 122, 0.25) -0.34%, rgba(251, 198, 219, 0.25) 90.27%), #482731",
-                  padding: "20px",
-                  borderRadius: "8px",
+                  padding: "36px",
+                  borderRadius: "16px",
                   fontSize: "14px",
                   color: "#fff",
                   marginTop: "55px",
                   boxShadow: "0px 3px 8px rgba(0, 0, 0, 0.33)",
                   zIndex: "10",
                   textAlign: "center",
+                  display: "flex-row",
+                  alignItems: "center",
                 },
               },
               [
@@ -181,7 +185,7 @@ export default createWidget("senate-uniswap", {
                     style: {
                       fontWeight: "700",
                       fontSize: "87px",
-                      margin: "0 0 10px",
+                      margin: "0 0 25px",
                     },
                   },
                   "🙏"
@@ -192,7 +196,7 @@ export default createWidget("senate-uniswap", {
                     style: {
                       fontWeight: "700",
                       fontSize: "28px",
-                      margin: "0 0 10px",
+                      margin: "0 0 25px",
                     },
                   },
                   "Thank you!"
@@ -203,7 +207,7 @@ export default createWidget("senate-uniswap", {
                     style: {
                       fontWeight: "400",
                       fontSize: "16px",
-                      margin: "0 0 10px",
+                      margin: "0 0 25px",
                     },
                   },
                   "Please click on the link we just sent to your email to confirm your subscription to Uniswap Proposals Notifications"
@@ -218,7 +222,7 @@ export default createWidget("senate-uniswap", {
                     position: "absolute",
                     left: "50%",
                     transform: "rotate(90deg)",
-                    marginTop: "-291px",
+                    marginTop: "-351px",
                   },
                 }),
               ]
