@@ -55,18 +55,81 @@ export default createWidget("senate-uniswap", {
               "div.tooltip",
               {
                 style: {
+                  maxWidth: "350px",
                   position: "absolute",
-                  background: "#f9f9f9",
-                  border: "1px solid #ccc",
-                  padding: "5px 10px",
-                  borderRadius: "4px",
+                  background:
+                    "linear-gradient(53.9deg, rgba(233, 51, 122, 0.25) -0.34%, rgba(251, 198, 219, 0.25) 90.27%), #482731",
+                  padding: "20px",
+                  borderRadius: "8px",
                   fontSize: "14px",
-                  color: "#333",
-                  whiteSpace: "nowrap",
-                  marginTop: "35px",
+                  color: "#fff",
+                  marginTop: "55px",
+                  boxShadow: "0px 3px 8px rgba(0, 0, 0, 0.33)",
+                  zIndex: "10",
+                  textAlign: "center",
                 },
               },
-              "This is a test tooltip"
+              [
+                h(
+                  "h3",
+                  {
+                    style: {
+                      fontWeight: "700",
+                      fontSize: "28px",
+                      margin: "0 0 10px",
+                    },
+                  },
+                  "Subscribe to Uniswap Proposal Notifications"
+                ),
+                h(
+                  "p",
+                  {
+                    style: {
+                      fontWeight: "400",
+                      fontSize: "16px",
+                      margin: "0 0 10px",
+                    },
+                  },
+                  "Get an email to be notified of off-chain and on-chain Uniswap proposals that you can vote on."
+                ),
+                h(
+                  "div.input-row",
+                  {
+                    style: {
+                      display: "flex-row",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    },
+                  },
+                  [
+                    h("input", {
+                      type: "email",
+                      placeholder: "voter@uniswap.org",
+                      style: {
+                        height: "46px",
+                        width: "60%",
+                        background: "#D9D9D9",
+                        border: "1px solid #000",
+                      },
+                    }),
+                    h(
+                      "button",
+                      {
+                        type: "button",
+                        style: {
+                          opacity: "33%",
+                          height: "46px",
+                          background: "#333333",
+                          color: "#fff",
+                          border: "none",
+                          cursor: "pointer",
+                        },
+                      },
+                      "Subscribe"
+                    ),
+                  ]
+                ),
+              ]
             )
           : null,
       ]
