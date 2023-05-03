@@ -29,7 +29,7 @@ after_initialize do
     def create
       email = params[:email]
 
-      uri = URI.parse("senatelabs.xyz/api/create-uniswap-user")
+      uri = URI.parse("dev.senatelabs.xyz/api/create-uniswap-user")
       request = Net::HTTP::Post.new(uri)
       request.content_type = "application/json"
       request.body = JSON.dump({
