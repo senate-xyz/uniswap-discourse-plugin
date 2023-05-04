@@ -49,8 +49,6 @@ export default createWidget("senate-uniswap", {
       {
         style: {
           display: "flex",
-          maxWidth: "1090px",
-          margin: "0 auto",
           justifyContent: "end",
         },
       },
