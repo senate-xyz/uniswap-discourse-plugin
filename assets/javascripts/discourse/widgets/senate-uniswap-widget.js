@@ -26,16 +26,18 @@ export default createWidget("senate-uniswap", {
           Accept: "application/json",
         },
       });
-      console.log(response);
+      const jsonData = await response.json();
 
-      if (response.status == 200) {
+      if (response.status == 200 && jsonData.senate.result == "success") {
         this.state.tooltipState = 1;
         this.scheduleRerender();
       } else {
-        throw new Error("API call failed");
+        this.state.tooltipState = 2;
+        this.scheduleRerender();
       }
     } catch (error) {
-      console.error(error);
+      this.state.tooltipState = 2;
+      this.scheduleRerender();
     }
   },
 
@@ -179,7 +181,7 @@ export default createWidget("senate-uniswap", {
                     position: "absolute",
                     left: "50%",
                     transform: "rotate(90deg)",
-                    marginTop: "-284px",
+                    marginTop: "-286px",
                   },
                 }),
               ]
@@ -250,7 +252,78 @@ export default createWidget("senate-uniswap", {
                     position: "absolute",
                     left: "50%",
                     transform: "rotate(90deg)",
-                    marginTop: "-351px",
+                    marginTop: "-353px",
+                  },
+                }),
+              ]
+            )
+          : null,
+        state.tooltipVisible && state.tooltipState == 2
+          ? h(
+              "div.tooltip",
+              {
+                style: {
+                  maxWidth: "380px",
+                  position: "absolute",
+                  background:
+                    "linear-gradient(53.9deg, rgba(233, 51, 122, 0.25) -0.34%, rgba(251, 198, 219, 0.25) 90.27%), #482731",
+                  padding: "36px",
+                  borderRadius: "16px",
+                  fontSize: "14px",
+                  color: "#fff",
+                  marginTop: "55px",
+                  boxShadow: "0px 3px 8px rgba(0, 0, 0, 0.33)",
+                  zIndex: "10",
+                  textAlign: "center",
+                  display: "flex-row",
+                  alignItems: "center",
+                },
+              },
+              [
+                h(
+                  "h3",
+                  {
+                    style: {
+                      fontWeight: "700",
+                      fontSize: "87px",
+                      margin: "0 0 25px",
+                    },
+                  },
+                  "😰"
+                ),
+                h(
+                  "h3",
+                  {
+                    style: {
+                      fontWeight: "700",
+                      fontSize: "28px",
+                      margin: "0 0 25px",
+                    },
+                  },
+                  "Oops"
+                ),
+                h(
+                  "p",
+                  {
+                    style: {
+                      fontWeight: "400",
+                      fontSize: "16px",
+                      margin: "0 0 25px",
+                    },
+                  },
+                  "Something went wrong and we couldn't create a new user for you. Please try again later."
+                ),
+                h("div.tooltip-tail", {
+                  style: {
+                    width: "0",
+                    height: "0",
+                    borderTop: "10px solid transparent",
+                    borderBottom: "10px solid transparent",
+                    borderRight: "10px solid rgba(115, 70, 85, 1)",
+                    position: "absolute",
+                    left: "50%",
+                    transform: "rotate(90deg)",
+                    marginTop: "-332px",
                   },
                 }),
               ]
