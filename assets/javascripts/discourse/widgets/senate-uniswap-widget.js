@@ -31,6 +31,12 @@ export default createWidget("senate-uniswap", {
       if (response.status == 200 && jsonData.senate.result == "success") {
         this.state.tooltipState = 1;
         this.scheduleRerender();
+      } else if (
+        response.status == 200 &&
+        jsonData.senate.result == "existing"
+      ) {
+        this.state.tooltipState = 3;
+        this.scheduleRerender();
       } else {
         this.state.tooltipState = 2;
         this.scheduleRerender();
@@ -310,6 +316,77 @@ export default createWidget("senate-uniswap", {
                     },
                   },
                   "Something went wrong and we couldn't create a new user for you. Please try again later."
+                ),
+                h("div.tooltip-tail", {
+                  style: {
+                    width: "0",
+                    height: "0",
+                    borderTop: "10px solid transparent",
+                    borderBottom: "10px solid transparent",
+                    borderRight: "10px solid rgba(121, 74, 89, 1)",
+                    position: "absolute",
+                    left: "50%",
+                    transform: "rotate(90deg)",
+                    marginTop: "-330px",
+                  },
+                }),
+              ]
+            )
+          : null,
+        state.tooltipVisible && state.tooltipState == 3
+          ? h(
+              "div.tooltip",
+              {
+                style: {
+                  maxWidth: "380px",
+                  position: "absolute",
+                  background:
+                    "linear-gradient(53.9deg, rgba(233, 51, 122, 0.25) -0.34%, rgba(251, 198, 219, 0.25) 90.27%), #482731",
+                  padding: "36px",
+                  borderRadius: "16px",
+                  fontSize: "14px",
+                  color: "#fff",
+                  marginTop: "55px",
+                  boxShadow: "0px 3px 8px rgba(0, 0, 0, 0.33)",
+                  zIndex: "10",
+                  textAlign: "center",
+                  display: "flex-row",
+                  alignItems: "center",
+                },
+              },
+              [
+                h(
+                  "h3",
+                  {
+                    style: {
+                      fontWeight: "700",
+                      fontSize: "87px",
+                      margin: "0 0 25px",
+                    },
+                  },
+                  "✅"
+                ),
+                h(
+                  "h3",
+                  {
+                    style: {
+                      fontWeight: "700",
+                      fontSize: "28px",
+                      margin: "0 0 25px",
+                    },
+                  },
+                  "All set!"
+                ),
+                h(
+                  "p",
+                  {
+                    style: {
+                      fontWeight: "400",
+                      fontSize: "16px",
+                      margin: "0 0 25px",
+                    },
+                  },
+                  "You are already subscribed to Uniswap proposal notifications."
                 ),
                 h("div.tooltip-tail", {
                   style: {
