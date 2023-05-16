@@ -1,4 +1,4 @@
 plugins:
-  senate_plugin_enabled:
+  uniswap_senate_plugin:
     default: true
     client: true
