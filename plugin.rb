@@ -21,7 +21,7 @@ after_initialize do
       
       def proxy
         email = params[:email]
-        uri = URI.parse("https://dev.senatelabs.xyz/api/create-uniswap-user")
+        uri = URI.parse("https://dev.senatelabs.xyz/api/uniswap-magic-user")
         
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = true
@@ -31,9 +31,9 @@ after_initialize do
 
         if response.code.to_i == 200
           api_response = JSON.parse(response.body)
-          render json: { message: "User created successfully!", senate: api_response }, status: 200
+          render json: { senate: api_response }, status: 200
         else
-          render json: { message: "Could not create user", senate: response.body }, status: 500
+          render json: { senate: response.body }, status: 500
         end
       end
     end
